@@ -1,0 +1,194 @@
+/* src/App.css */
+
+.app-root {
+  min-height: 100vh;
+  padding: 24px;
+  background: radial-gradient(circle at top, #4f46e5 0, #020617 45%, #000 100%);
+  color: #fff;
+}
+
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.app-title-icon {
+  color: #f472b6; /* pink */
+}
+
+.app-title {
+  font-size: 2.25rem;
+  margin: 0;
+}
+
+.app-subtitle {
+  color: #c7d2fe;
+  margin: 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card-input {
+  margin-bottom: 24px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.text-input,
+.date-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(15, 23, 42, 0.7);
+  color: #fff;
+}
+
+.text-input::placeholder {
+  color: #e5e7eb;
+}
+
+.fields-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .fields-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.primary-button {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.5);
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.count-text {
+  text-align: center;
+  color: #c7d2fe;
+}
+
+.count-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.count-label {
+  margin-left: 4px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.empty-icon {
+  margin-bottom: 16px;
+  color: #a5b4fc;
+}
+
+.empty-text {
+  color: #e0e7ff;
+  font-size: 1.05rem;
+}
+
+.band-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.band-card:hover {
+  background: rgba(15, 23, 42, 0.95);
+  transform: translateY(-1px);
+}
+
+.band-main {
+  flex: 1;
+}
+
+.band-name {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.band-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.delete-button {
+  border: none;
+  background: transparent;
+  color: #fca5a5;
+  border-radius: 999px;
+  padding: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.delete-button:hover {
+  background: rgba(248, 113, 113, 0.18);
+  color: #fecaca;
+  transform: translateY(-1px);
+}
