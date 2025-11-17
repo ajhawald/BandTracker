@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Music, Calendar, MapPin, Trash2 } from 'lucide-react';
 import './App.css';
 
 export default function App() {
-  const [bands, setBands] = useState([]);
+  // Load bands from localStorage on startup
+  const [bands, setBands] = useState(() => {
+    const saved = localStorage.getItem("bands");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [bandName, setBandName] = useState('');
   const [venue, setVenue] = useState('');
   const [date, setDate] = useState('');
+
+  // Save bands to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("bands", JSON.stringify(bands));
+  }, [bands]);
 
   const addBand = () => {
     if (bandName.trim()) {
@@ -42,6 +52,7 @@ export default function App() {
           </p>
         </header>
 
+        {/* Input Card */}
         <section className="card card-input">
           <div className="field">
             <label className="field-label">Band Name *</label>
@@ -82,6 +93,7 @@ export default function App() {
           </button>
         </section>
 
+        {/* List Section */}
         <section className="list-section">
           {bands.length === 0 ? (
             <div className="card empty-state">
@@ -103,15 +115,18 @@ export default function App() {
                 <div key={band.id} className="band-card">
                   <div className="band-main">
                     <h3 className="band-name">{band.name}</h3>
+
                     <div className="band-meta-row">
                       <MapPin size={16} />
                       <span>{band.venue}</span>
                     </div>
+
                     <div className="band-meta-row">
                       <Calendar size={16} />
                       <span>{band.date}</span>
                     </div>
                   </div>
+
                   <button
                     onClick={() => deleteBand(band.id)}
                     className="delete-button"
